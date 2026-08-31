@@ -16,10 +16,10 @@ Abre em `http://localhost:3000`.
 Todo o conteúdo do site (nome, bio, matérias, skills, contato) está em:
 
 ```
-content/site.ts
+content/site-data.json
 ```
 
-Edite os valores desse arquivo — nenhum componente precisa ser tocado. Como o arquivo é tipado, um erro de digitação na estrutura quebra o build (é assim que você descobre o erro antes de publicar).
+É um arquivo de dados puro (JSON) — não precisa mexer em `content/site.ts` nem em nenhum componente. Guia campo a campo em [`content/COMO-EDITAR.md`](content/COMO-EDITAR.md).
 
 ## Build e deploy
 
@@ -32,7 +32,9 @@ vercel --prod       # publica em produção (https://portfolio-jornalismo.vercel
 ## Estrutura
 
 ```
-app/                 layout e página principal
-components/          um componente por seção (Hero, About, Articles, Skills, Contact, Nav, Footer)
-content/site.ts       todo o conteúdo editável do site
+app/                     layout e página principal
+components/              um componente por seção (Hero, About, Articles, Skills, Contact, Nav, Footer)
+content/site-data.json   todo o conteúdo editável do site (edite este)
+content/COMO-EDITAR.md   guia de preenchimento campo a campo
+content/site.ts          tipos + import do JSON (não precisa editar)
 ```
