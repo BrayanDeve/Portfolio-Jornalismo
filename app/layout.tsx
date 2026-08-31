@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import { site } from "@/content/site";
+import BackgroundBlobs from "@/components/BackgroundBlobs";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -24,7 +27,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR" className={`${fraunces.variable} ${inter.variable}`}>
-      <body>{children}</body>
+      <body>
+        <BackgroundBlobs />
+        <Nav />
+        <main className="relative z-[1]">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }

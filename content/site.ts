@@ -6,6 +6,11 @@ export type GalleryPhoto = {
   caption: string;
 };
 
+export type Skill = {
+  name: string;
+  description: string;
+};
+
 export type SiteContent = {
   name: string;
   role: string;
@@ -16,7 +21,7 @@ export type SiteContent = {
     facts: string[];
   };
   gallery: GalleryPhoto[];
-  skills: string[];
+  skills: Skill[];
   contact: {
     email: string;
     linkedin?: string;

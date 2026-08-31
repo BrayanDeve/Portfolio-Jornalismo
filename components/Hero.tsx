@@ -4,7 +4,7 @@ export default function Hero() {
   const firstName = site.name.split(" ")[0];
 
   return (
-    <section id="top" className="min-h-[82vh] flex flex-col justify-center px-[8vw] max-w-[780px] scroll-mt-24">
+    <section id="top" className="min-h-[82vh] flex flex-col justify-start pt-24 px-[8vw] max-w-[780px] scroll-mt-16">
       <p className="animate-fade-up text-terracotta-dark font-semibold tracking-wide mb-3">
         portfólio de jornalismo
       </p>

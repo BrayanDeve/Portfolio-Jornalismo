@@ -63,8 +63,12 @@ colocando um "_" na frente, igual o modelo).
   Para reordenar, mova o bloco `{ ... }` de posição na lista — a
   ordem de exibição é a ordem em que aparecem aqui. Para remover uma
   foto, apague o bloco inteiro (e o arquivo de imagem, se quiser).
-- **`skills`** — lista de habilidades, uma palavra ou expressão curta
-  por item.
+- **`skills`** — suas habilidades. Cada uma tem:
+  - `name` — o nome da habilidade (ex: `"Redação"`).
+  - `description` — uma frase curta que aparece numa caixinha ao
+    passar o mouse (ou tocar, no celular) em cima do nome.
+  Pra adicionar ou remover uma habilidade, copie ou apague um bloco
+  `{ ... }` inteiro da lista.
 - **`contact.email`** — seu e-mail de contato.
 - **`contact.linkedin`** / **`contact.instagram`** — links completos
   dos seus perfis. Se não quiser mostrar um dos dois, apague a linha

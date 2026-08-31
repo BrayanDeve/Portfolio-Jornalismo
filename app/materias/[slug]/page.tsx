@@ -33,7 +33,7 @@ export default async function MateriaPage({
   if (!materia) notFound();
 
   return (
-    <main className="px-[8vw] py-16 max-w-[720px] mx-auto">
+    <article className="px-[8vw] py-16 max-w-[720px] mx-auto">
       <Link
         href="/#materias"
         className="text-sm font-medium text-terracotta-dark hover:underline underline-offset-4"
@@ -71,6 +71,6 @@ export default async function MateriaPage({
           return <p key={i}>{block.text}</p>;
         })}
       </div>
-    </main>
+    </article>
   );
 }

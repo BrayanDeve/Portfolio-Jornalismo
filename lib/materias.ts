@@ -28,6 +28,18 @@ function readMateriaFiles(): string[] {
     .filter((file) => file.endsWith(".md") && !file.startsWith("_"));
 }
 
+function parseFrontmatter(raw: string, file: string) {
+  try {
+    return matter(raw);
+  } catch (err) {
+    throw new Error(
+      `content/materias/${file}: erro ao ler o cabeçalho (entre as linhas ---). Confira se o título está entre aspas — isso é obrigatório quando o texto tem dois-pontos (:). Detalhe técnico: ${
+        (err as Error).message
+      }`
+    );
+  }
+}
+
 function parseBody(body: string): MateriaBlock[] {
   return body
     .split(/\n\s*\n/)
@@ -53,7 +65,7 @@ function loadMateria(file: string): Materia {
   const slug = file.replace(/\.md$/, "");
   const fullPath = path.join(MATERIAS_DIR, file);
   const raw = fs.readFileSync(fullPath, "utf8");
-  const { data, content } = matter(raw);
+  const { data, content } = parseFrontmatter(raw, file);
 
   for (const field of ["title", "tag", "description"] as const) {
     if (!data[field]) {

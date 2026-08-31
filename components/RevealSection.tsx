@@ -32,7 +32,7 @@ export default function RevealSection({
   }, []);
 
   return (
-    <section id={id} ref={ref} className={`reveal scroll-mt-24 ${className}`}>
+    <section id={id} ref={ref} className={`reveal scroll-mt-16 ${className}`}>
       {children}
     </section>
   );
