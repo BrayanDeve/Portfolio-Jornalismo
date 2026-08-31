@@ -6,6 +6,7 @@ import { site } from "@/content/site";
 const LINKS = [
   { href: "#sobre", label: "sobre" },
   { href: "#materias", label: "matérias" },
+  { href: "#galeria", label: "fotos" },
   { href: "#skills", label: "habilidades" },
   { href: "#contato", label: "contato" },
 ];

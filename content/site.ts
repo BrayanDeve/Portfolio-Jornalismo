@@ -1,10 +1,9 @@
 import data from "./site-data.json";
 
-export type Article = {
-  title: string;
-  tag: "reportagem" | "entrevista" | "opinião" | string;
-  description: string;
-  url: string;
+export type GalleryPhoto = {
+  src: string;
+  alt: string;
+  caption: string;
 };
 
 export type SiteContent = {
@@ -16,7 +15,7 @@ export type SiteContent = {
     bio: string[];
     facts: string[];
   };
-  articles: Article[];
+  gallery: GalleryPhoto[];
   skills: string[];
   contact: {
     email: string;
@@ -27,5 +26,6 @@ export type SiteContent = {
 };
 
 // Não edite este arquivo para trocar textos do site.
-// Todo o conteúdo vem de content/site-data.json — veja content/COMO-EDITAR.md.
+// Perfil, galeria de fotos e contato vêm de content/site-data.json.
+// Matérias vêm de content/materias/*.md — veja content/COMO-EDITAR.md.
 export const site: SiteContent = data;

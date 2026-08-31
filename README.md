@@ -13,13 +13,10 @@ Abre em `http://localhost:3000`.
 
 ## Editando o conteúdo
 
-Todo o conteúdo do site (nome, bio, matérias, skills, contato) está em:
+- **Perfil, galeria de fotos, skills e contato** — `content/site-data.json`, um arquivo de dados puro (JSON).
+- **Matérias** (reportagem, entrevista, opinião) — um arquivo por matéria em `content/materias/*.md`, cada uma com sua própria página (`/materias/[slug]`).
 
-```
-content/site-data.json
-```
-
-É um arquivo de dados puro (JSON) — não precisa mexer em `content/site.ts` nem em nenhum componente. Guia campo a campo em [`content/COMO-EDITAR.md`](content/COMO-EDITAR.md).
+Nenhum dos dois precisa mexer em `content/site.ts`, `lib/materias.ts` nem em componente algum. Guia campo a campo em [`content/COMO-EDITAR.md`](content/COMO-EDITAR.md).
 
 ## Build e deploy
 
@@ -32,9 +29,11 @@ vercel --prod       # publica em produção (https://portfolio-jornalismo.vercel
 ## Estrutura
 
 ```
-app/                     layout e página principal
-components/              um componente por seção (Hero, About, Articles, Skills, Contact, Nav, Footer)
-content/site-data.json   todo o conteúdo editável do site (edite este)
+app/                     layout, página principal e app/materias/[slug] (página de cada matéria)
+components/              um componente por seção (Hero, About, Articles, Gallery, Skills, Contact, Nav, Footer)
+content/site-data.json   perfil, galeria, skills e contato (edite este)
+content/materias/*.md    uma matéria por arquivo (edite estes — copie content/materias/_modelo.md)
 content/COMO-EDITAR.md   guia de preenchimento campo a campo
 content/site.ts          tipos + import do JSON (não precisa editar)
+lib/materias.ts          lê e valida os arquivos de content/materias/ (não precisa editar)
 ```

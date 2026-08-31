@@ -92,4 +92,8 @@ button:focus-visible {
   .blob-drift-b {
     animation: none;
   }
+
+  html {
+    scroll-behavior: auto;
+  }
 }
