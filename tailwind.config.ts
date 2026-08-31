@@ -11,7 +11,7 @@ const config: Config = {
         "terracotta-dark": "#c96f4c",
         blush: "#f3c9c2",
         sage: "#b7c4ab",
-        muted: "#7a7068",
+        muted: "#6b6058",
       },
       fontFamily: {
         serif: ["var(--font-fraunces)"],

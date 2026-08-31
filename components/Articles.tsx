@@ -11,13 +11,13 @@ export default function Articles() {
           <a
             key={article.title}
             href={article.url}
-            className="flex flex-col gap-2.5 bg-white rounded-[20px] p-7 shadow-[0_8px_24px_rgba(47,42,40,0.06)] hover:shadow-[0_16px_32px_rgba(47,42,40,0.1)] hover:-translate-y-1.5 transition"
+            className="flex flex-col gap-2.5 bg-white rounded-[20px] p-7 shadow-[0_8px_24px_rgba(47,42,40,0.06)] hover:shadow-[0_16px_32px_rgba(47,42,40,0.1)] hover:-translate-y-1 transition-all duration-300 ease-out"
           >
             <span className="self-start text-xs font-semibold uppercase tracking-wide text-terracotta-dark bg-terracotta/10 px-3 py-1 rounded-full">
               {article.tag}
             </span>
-            <h3 className="font-serif text-xl">{article.title}</h3>
-            <p className="text-muted text-sm flex-grow">{article.description}</p>
+            <h3 className="font-serif text-xl line-clamp-2">{article.title}</h3>
+            <p className="text-muted text-sm flex-grow line-clamp-3">{article.description}</p>
             <span className="font-semibold text-sm text-terracotta-dark">ler matéria →</span>
           </a>
         ))}

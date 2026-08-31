@@ -1,5 +1,6 @@
 import { site } from "@/content/site";
 import RevealSection from "./RevealSection";
+import CopyEmailButton from "./CopyEmailButton";
 
 export default function Contact() {
   return (
@@ -11,14 +12,14 @@ export default function Contact() {
       <div className="flex justify-center gap-4 flex-wrap">
         <a
           href={`mailto:${site.contact.email}`}
-          className="px-6 py-3 rounded-full font-semibold text-sm bg-terracotta text-white shadow-[0_8px_20px_rgba(224,142,109,0.35)] hover:shadow-[0_12px_24px_rgba(224,142,109,0.45)] hover:-translate-y-0.5 transition"
+          className="px-6 py-3 rounded-full font-semibold text-sm bg-terracotta text-white shadow-[0_8px_20px_rgba(224,142,109,0.35)] hover:shadow-[0_12px_24px_rgba(224,142,109,0.45)] hover:-translate-y-0.5 transition-all duration-300 ease-out"
         >
           enviar e-mail
         </a>
         {site.contact.linkedin && (
           <a
             href={site.contact.linkedin}
-            className="px-6 py-3 rounded-full font-semibold text-sm border border-ink/20 hover:border-terracotta-dark hover:text-terracotta-dark hover:-translate-y-0.5 transition"
+            className="px-6 py-3 rounded-full font-semibold text-sm border border-ink/20 hover:border-terracotta-dark hover:text-terracotta-dark hover:-translate-y-0.5 transition-all duration-300 ease-out"
           >
             LinkedIn
           </a>
@@ -26,11 +27,14 @@ export default function Contact() {
         {site.contact.instagram && (
           <a
             href={site.contact.instagram}
-            className="px-6 py-3 rounded-full font-semibold text-sm border border-ink/20 hover:border-terracotta-dark hover:text-terracotta-dark hover:-translate-y-0.5 transition"
+            className="px-6 py-3 rounded-full font-semibold text-sm border border-ink/20 hover:border-terracotta-dark hover:text-terracotta-dark hover:-translate-y-0.5 transition-all duration-300 ease-out"
           >
             Instagram
           </a>
         )}
+      </div>
+      <div className="mt-4">
+        <CopyEmailButton email={site.contact.email} />
       </div>
     </RevealSection>
   );

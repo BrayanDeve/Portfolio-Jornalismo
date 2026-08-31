@@ -2,11 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: #fdf6f0;
   color: #2f2a28;
   font-family: var(--font-inter), sans-serif;
   overflow-x: hidden;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #c96f4c;
+  outline-offset: 3px;
+  border-radius: 6px;
 }
 
 @keyframes fadeUp {
@@ -34,4 +45,51 @@ body {
 .reveal.in-view {
   opacity: 1;
   transform: translateY(0);
+}
+
+@keyframes driftA {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-16px, 18px);
+  }
+}
+
+@keyframes driftB {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(18px, -16px);
+  }
+}
+
+.blob-drift-a {
+  animation: driftA 22s ease-in-out infinite;
+}
+
+.blob-drift-b {
+  animation: driftB 26s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .blob-drift-a,
+  .blob-drift-b {
+    animation: none;
+  }
 }
