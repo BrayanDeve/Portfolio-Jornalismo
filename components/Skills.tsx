@@ -31,7 +31,15 @@ export default function Skills() {
                 type="button"
                 aria-describedby={tooltipId}
                 aria-expanded={isActive}
-                onClick={() => setPinned((current) => (current === i ? null : i))}
+                onClick={() => {
+                  setPinned((current) => {
+                    if (current === i) {
+                      setHovered((h) => (h === i ? null : h));
+                      return null;
+                    }
+                    return i;
+                  });
+                }}
                 onFocus={() => setHovered(i)}
                 onBlur={() => setHovered((current) => (current === i ? null : current))}
                 onKeyDown={(e) => {
@@ -52,7 +60,7 @@ export default function Skills() {
               <div
                 id={tooltipId}
                 role="tooltip"
-                className={`pointer-events-none absolute left-1/2 top-full z-10 mt-3 w-56 -translate-x-1/2 rounded-xl border border-ink/10 bg-white px-4 py-3 text-sm leading-relaxed text-ink/70 shadow-[0_12px_28px_rgba(47,42,40,0.12)] transition-all duration-700 ease-out ${
+                className={`pointer-events-none absolute left-1/2 top-full z-10 mt-3 w-48 max-w-[calc(100vw-2rem)] -translate-x-1/2 rounded-xl border border-ink/10 bg-white px-4 py-3 text-sm leading-relaxed text-ink/70 shadow-[0_12px_28px_rgba(47,42,40,0.12)] transition-all duration-700 ease-out sm:w-56 ${
                   isActive ? "translate-y-0 opacity-100" : "-translate-y-1 opacity-0"
                 }`}
               >
